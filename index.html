@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever in My Universe 💜</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(ellipse at top, #49246d, transparent 60%),
+        linear-gradient(135deg, #08091d, #24113f, #100b29);
+    overflow-x: hidden;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff3c4;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px 15px 50px;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+h1 {
+    color: #fff0cf;
+    font-size: clamp(25px, 5vw, 38px);
+    text-shadow: 0 0 20px #dc9fff;
+}
+
+h2 {
+    color: #ffe8c0;
+    font-size: 23px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.intro {
+    text-align: center;
+    color: #d8c6f6;
+}
+
+.card {
+    margin: 25px auto;
+    padding: 25px 18px;
+    text-align: center;
+    border: 1px solid #c49aff66;
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        #291548e8,
+        #100c2beF
+    );
+    box-shadow: 0 0 30px #9a63ff20;
+}
+
+.heart {
+    font-size: 100px;
+    animation: heartbeat 2s infinite;
+    filter: drop-shadow(0 0 20px #ff91d5);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 22px;
+    margin: 8px;
+    background: linear-gradient(90deg, #ffe29a, #e9bd51);
+    color: #28143b;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px #f5d77c66;
+}
+
+.stars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.wish {
+    padding: 17px 10px;
+    border: 1px solid #c49aff66;
+    border-radius: 15px;
+    background: #ffffff08;
+    color: white;
+    cursor: pointer;
+}
+
+.wish span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+#wishMessage {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    color: #ffe8f7;
+    background: #09071a;
+    border-radius: 12px;
+}
+
+.cake {
+    font-size: 90px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.portal {
+    width: 170px;
+    height: 200px;
+    margin: 25px auto;
+    display: grid;
+    place-items: center;
+    font-size: 55px;
+    border: 3px solid #e7c978;
+    border-radius: 100px 100px 10px 10px;
+    background: radial-gradient(
+        circle,
+        #ed9cff,
+        #783ec3 45%,
+        #170d34
+    );
+    box-shadow: 0 0 35px #b57aff88;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to { box-shadow: 0 0 55px #e49cff; }
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    justify-content: center;
+    gap: 8px;
+    margin: 20px;
+}
+
+.key {
+    width: 48px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #ffffff15;
+    border: 1px solid #c49aff66;
+}
+
+#digits {
+    min-height: 28px;
+    letter-spacing: 8px;
+    color: #ffe29a;
+    font-size: 23px;
+}
+
+#surprise {
+    display: none;
+    padding: 20px;
+    line-height: 1.9;
+    color: #ffe8f7;
+}
+
+footer {
+    text-align: center;
+    color: #c9b6e8;
+    font-size: 13px;
+    padding: 20px;
+}
+
+@media (max-width: 450px) {
+    .card { padding: 22px 13px; }
+    .stars-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<main>
+
+    <h1>Forever in My Universe ✨</h1>
+
+    <p class="intro">
+        A little galaxy made just for you. 💜
+    </p>
+
+    <section class="card">
+        <div class="heart">💖</div>
+
+        <h2>My Favourite Person</h2>
+
+        <p>
+            Even in a universe filled with billions of stars,
+            you will always be my favourite.
+            You make my little world brighter in ways
+            words can never explain. 🌌
+        </p>
+
+        <p>Make a wish. The universe is listening. 🌟</p>
+
+        <button onclick="goTo('wishes')">
+            REPLAY OUR UNIVERSE ✨
+        </button>
+    </section>
+
+    <section class="card" id="wishes">
+
+        <h2>Seven Stars, Seven Wishes ✨</h2>
+
+        <p>Tap each star to reveal a special wish.</p>
+
+        <div class="stars-grid">
+
+            <div class="wish" onclick="showWish(0)">
+                <span>⭐</span>Wish One
+            </div>
+
+            <div class="wish" onclick="showWish(1)">
+                <span>🌙</span>Wish Two
+            </div>
+
+            <div class="wish" onclick="showWish(2)">
+                <span>💫</span>Wish Three
+            </div>
+
+            <div class="wish" onclick="showWish(3)">
+                <span>🌌</span>Wish Four
+            </div>
+
+            <div class="wish" onclick="showWish(4)">
+                <span>💗</span>Wish Five
+            </div>
+
+            <div class="wish" onclick="showWish(5)">
+                <span>🪐</span>Wish Six
+            </div>
+
+            <div class="wish"
+                 onclick="showWish(6)"
+                 style="grid-column:1/-1">
+                <span>🌠</span>Wish Seven — Special Wish
+            </div>
+
+        </div>
+
+        <div id="wishMessage"></div>
+
+    </section>
+
+    <section class="card" id="birthday">
+
+        <h2>Today, the Universe Celebrates YOU! 🎂💗</h2>
+
+        <div class="cake" id="cake">🎂</div>
+
+        <p>
+            Happy Birthday! May every wish you make
+            tonight come true. You deserve happiness
+            in every galaxy. 💫
+        </p>
+
+        <button onclick="blowCandles()">
+            BLOW THE CANDLES 🎉
+        </button>
+
+        <p id="birthdayMessage"></p>
+
+    </section>
+
+    <section class="card">
+
+        <h2>
+            Somewhere in This Universe,<br>
+            A Surprise Awaits You ✨
+        </h2>
+
+        <div class="portal">💖</div>
+
+        <button onclick="goTo('secret')">
+            OPEN YOUR UNIVERSE 💗
+        </button>
+
+    </section>
+
+    <section class="card" id="secret">
+
+        <h2>Wait... One Little Secret! 💗</h2>
+
+        <p>
+            Enter your four-digit magic code
+            to unlock a special surprise.
+        </p>
+
+        <div id="digits">○ ○ ○ ○</div>
+
+        <div class="keypad">
+
+            <button class="key" onclick="press('1')">1</button>
+            <button class="key" onclick="press('2')">2</button>
+            <button class="key" onclick="press('3')">3</button>
+
+            <button class="key" onclick="press('4')">4</button>
+            <button class="key" onclick="press('5')">5</button>
+            <button class="key" onclick="press('6')">6</button>
+
+            <button class="key" onclick="press('7')">7</button>
+            <button class="key" onclick="press('8')">8</button>
+            <button class="key" onclick="press('9')">9</button>
+
+            <button class="key" onclick="clearPin()">C</button>
+            <button class="key" onclick="press('0')">0</button>
+            <button class="key" onclick="backspace()">⌫</button>
+
+        </div>
+
+        <button onclick="unlock()">UNLOCK ✨</button>
+
+        <p id="pinMessage"></p>
+
+        <div id="surprise">
+
+            <div style="font-size:55px">💌</div>
+
+            <h2>You Are My Favourite Part of This Universe</h2>
+
+            <p>
+                No distance, no time, and no number of stars
+                could change how special you are.
+                I hope this little surprise reminds you
+                that you are loved more than words can say. 💖
+            </p>
+
+            <p>Always keep shining. 🌌✨</p>
+
+            <button onclick="sparkle()">
+                MAKE THE UNIVERSE SPARKLE ✨
+            </button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Made with stardust, love & a little bit of magic 💜
+    </footer>
+
+</main>
+
+<script>
+
+// Create the animated stars
+const starLayer = document.getElementById("stars");
+
+for (let i = 0; i < 120; i++) {
+    const star = document.createElement("div");
+
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    starLayer.appendChild(star);
+}
+
+// Seven wishes
+const wishes = [
+    "May your days be filled with tiny joys, big dreams, and beautiful surprises. ⭐",
+
+    "May you always find peace in the moonlight and courage in every new beginning. 🌙",
+
+    "May every dream you keep close to your heart find its way to you. 💫",
+
+    "May your world always be full of wonder, kindness, and endless possibilities. 🌌",
+
+    "May you always feel appreciated, supported, and surrounded by genuine love. 💗",
+
+    "May life take you to places more beautiful than the ones you imagine. 🪐",
+
+    "My final wish is simple: may happiness find you again and again, in every universe. 🌠"
+];
+
+function showWish(index) {
+    const box = document.getElementById("wishMessage");
+
+    box.textContent = wishes[index];
+    box.style.display = "block";
+}
+
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Birthday candle effect
+function blowCandles() {
+    document.getElementById("cake").textContent = "🎂✨💨";
+
+    document.getElementById("birthdayMessage").textContent =
+        "Your birthday wish is on its way among the stars! 💖";
+
+    sparkle();
+}
+
+// Four-digit code
+let pin = "";
+
+function updatePin() {
+    document.getElementById("digits").textContent =
+        (pin + "○○○○").slice(0, 4).split("").join(" ");
+}
+
+function press(number) {
+    if (pin.length < 4) {
+        pin += number;
+        updatePin();
+    }
+}
+
+function clearPin() {
+    pin = "";
+    updatePin();
+
+    document.getElementById("pinMessage").textContent = "";
+}
+
+function backspace() {
+    pin = pin.slice(0, -1);
+    updatePin();
+}
+
+function unlock() {
+    if (pin.length === 4) {
+        document.getElementById("surprise").style.display = "block";
+
+        document.getElementById("pinMessage").textContent =
+            "Universe unlocked! ✨💗";
+
+        sparkle();
+
+        document.getElementById("surprise").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    } else {
+        document.getElementById("pinMessage").textContent =
+            "Please enter all four digits. 💗";
+    }
+}
+
+// Floating sparkle effect
+function sparkle() {
+    const symbols = ["✨", "💗", "⭐", "✦", "🌟"];
+
+    for (let i = 0; i < 50; i++) {
+        const item = document.createElement("span");
+
+        item.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        item.style.position = "fixed";
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.top = "-30px";
+        item.style.fontSize = 18 + Math.random() * 15 + "px";
+        item.style.zIndex = "100";
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
+
+        const animation = item.animate(
+            [
+                {
+                    transform: "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translate(${(Math.random() - 0.5) * 180}px, 105vh) rotate(360deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 1800 + Math.random() * 1500,
+                easing: "ease-out"
+            }
+        );
+
+        animation.onfinish = () => item.remove();
+    }
+}
+
+</script>
+
+</body>
+  </html>
